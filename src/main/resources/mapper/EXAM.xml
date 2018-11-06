@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exam.sp.EXAM">
+	<select id="getselectList" resultType="com.exam.sp.vo.Exam" parameterType="com.exam.sp.vo.Exam">
+		select * from exam
+	</select>
+	<select id="getselect" resultType="com.exam.sp.vo.Exam" parameterType="com.exam.sp.vo.Exam">
+		select * from exam
+		where num=#{num}
+	</select>
+	<insert id="insertExam" parameterType="com.exam.sp.vo.Exam">
+		insert into exam(name,age)
+		values(#{name},#{age})
+	</insert>
+	<update id="updateExam" parameterType="com.exam.sp.vo.Exam">
+		update exam
+		  set name=#{name},
+		  age=#{age}
+		where num=#{num}
+	</update>
+	<delete id="deleteExam" parameterType="com.exam.sp.vo.Exam">
+		delete from exam
+		where num=#{num}
+	</delete>
+</mapper>
